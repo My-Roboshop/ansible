@@ -1,0 +1,48 @@
+- name: functions
+  hosts: local
+  connection: local
+  vars:
+    name: "Gokul Kumar"
+    email: GOKULKUMAR0307@gmail.com
+    ipaddress: "192.168.1.1"
+  tasks:   
+  - name: convert UpperCase 
+    ansible.builtin.debug:
+      msg: "{{ name | upper }}"
+
+  - name: convert LowerCase 
+    ansible.builtin.debug:
+      msg: "{{ email | lower }}"    
+
+  - name: To check IP address is valid or not 
+    ansible.builtin.debug:
+      msg: "{{ ipaddress | ansible.utils.ipv4 }}"    # ansible --version, pip3.9 install netaddr
+
+# shell vs command
+
+  - name: grep for root 
+    ansible.builtin.shell: cat /etc/passwd | grep root # For complex commands, we have to go with shell. For simple commands we can use shell.
+    register: command_output
+
+  - name: Print command output
+    ansible.builtin.debug:
+      msg: "{{ command_output }}"
+           
+# Another example
+
+  - name: redirect the output 
+    ansible.builtin.command: ls -ltr > /tmp/output.txt # For complex commands, we have to go with shell. For simple commands we can use shell.
+    register: redirect_output
+    ignore_errors: true # it will proceed even we get error
+
+  - name: Print redirect output
+    ansible.builtin.debug:
+      msg: "{{ redirect_output }}"
+
+  - name: redirect the output using shell
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt # For complex commands, we have to go with shell. For simple commands we can use shell.
+    register: redirect_output
+
+  - name: Print redirect output using shell
+    ansible.builtin.debug:
+      msg: "{{ redirect_output }}"    

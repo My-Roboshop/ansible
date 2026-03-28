@@ -1,0 +1,14 @@
+- name: functions
+  hosts: local
+  connection: local
+  vars:
+    # dictionary == map (Map and dictionary are same only)
+    tags:
+      Application = Payment
+      Environment == dev
+  tasks:
+   # Map to list    
+  - name: convert Map to list  
+    ansible.builtin.debug:
+      msg: "Tags are: {{ tags | dict2items }}"   
+           

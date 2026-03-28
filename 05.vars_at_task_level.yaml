@@ -1,0 +1,15 @@
+- name: Play level variables
+  host: local
+  connection: local # Ansible is connecting to local host
+  vars:
+    Course: DevOps with AWS
+    Duration: 10 Hrs
+    Trainer: Gokul Kumar
+  tasks:
+  - name: Print the course info
+    vars:
+    Course: Ansible
+    ansible.builtin.debug:
+      msg: "Course Name is: {{ Course }}, Duration: {{ Duration }}, Trainer: {{ Trainer }}"
+
+    # Here Task level will have the First priority
