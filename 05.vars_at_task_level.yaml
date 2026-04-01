@@ -13,3 +13,5 @@
       msg: "Course Name is: {{ Course }}, Duration: {{ Duration }}, Trainer: {{ Trainer }}"
 
     # Here Task level will have the First priority  
+
+# ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 05.vars_at_task_level.yaml    
