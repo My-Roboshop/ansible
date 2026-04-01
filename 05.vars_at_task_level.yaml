@@ -8,8 +8,8 @@
   tasks:
   - name: Print the course info
     vars:
-    Course: Ansible
+      Course: Ansible
     ansible.builtin.debug:
       msg: "Course Name is: {{ Course }}, Duration: {{ Duration }}, Trainer: {{ Trainer }}"
 
-    # Here Task level will have the First priority
+    # Here Task level will have the First priority  
