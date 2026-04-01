@@ -1,5 +1,5 @@
 - name: "ping the server"
-  hosts: localhost  # which server we are connecting to
+  hosts: local  # which server we are connecting to
   # List of tasks/collections/modules
   tasks:
   - name: ping
