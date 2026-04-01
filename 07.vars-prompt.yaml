@@ -12,3 +12,7 @@
   - name: Print Credentials
     ansible.builtin.debug:
       msg: "Username is {{ username}}, Password is {{ password }}"
+
+# ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 07.vars-prompt.yaml
+
+# Here it will prompt for username and password
