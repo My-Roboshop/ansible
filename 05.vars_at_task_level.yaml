@@ -1,5 +1,5 @@
 - name: Play level variables
-  host: local
+  hosts: local
   connection: local # Ansible is connecting to local host
   vars:
     Course: DevOps with AWS
