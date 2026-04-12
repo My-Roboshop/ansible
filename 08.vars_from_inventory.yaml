@@ -5,3 +5,7 @@
   - name: Print the course info
     ansible.builtin.debug:
       msg: "Course Name is: {{ COURSE }}, Duration: {{ DURATION }}, Trainer: {{ TRAINER }}"
+
+# ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 08.vars_from_inventory.yaml
+
+# Here, it was referring  variables from inventory.ini file.
